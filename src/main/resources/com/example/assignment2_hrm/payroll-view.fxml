@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="928.0" style="-fx-background-color: #003399;" xmlns="http://javafx.com/javafx/17.0.13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2_hrm.PayrollController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="585.0" prefWidth="287.0" style="-fx-background-color: #003366;">
+         <children>
+            <VBox layoutX="-1.0" layoutY="288.0" prefHeight="313.0" prefWidth="287.0">
+               <children>
+                  <Button fx:id="employeesButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_menu" stylesheets="@../../../css/fullpackstyling.css" text=" Employees" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../employees.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="departmentButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_menu" stylesheets="@../../../css/fullpackstyling.css" text=" Departments" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../department.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_selected" stylesheets="@../../../css/fullpackstyling.css" text=" Payroll Processing">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../payroll_selected.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="logoutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_menu" stylesheets="@../../../css/fullpackstyling.css" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutX="-4.0" layoutY="25.0" prefHeight="197.0" prefWidth="287.0">
+               <children>
+                  <ImageView fitHeight="166.0" fitWidth="228.0" layoutX="30.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../hrm-logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+
+   </children>
+</AnchorPane>

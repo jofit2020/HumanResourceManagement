@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="928.0" style="-fx-background-color: #003399;" xmlns="http://javafx.com/javafx/17.0.13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2_hrm.EmployeeController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="585.0" prefWidth="287.0" style="-fx-background-color: #003366;">
+         <children>
+            <VBox layoutX="-1.0" layoutY="288.0" prefHeight="313.0" prefWidth="287.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_selected" stylesheets="@../../../css/fullpackstyling.css" text=" Employees">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../employees_selected.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="departmentButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_menu" stylesheets="@../../../css/fullpackstyling.css" text=" Departments" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../department.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="payrollButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_menu" stylesheets="@../../../css/fullpackstyling.css" text=" Payroll Processing" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../payroll.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="logoutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="52.0" prefWidth="287.0" styleClass="btn_menu" stylesheets="@../../../css/fullpackstyling.css" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Avenir Medium" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutX="-4.0" layoutY="25.0" prefHeight="197.0" prefWidth="287.0">
+               <children>
+                  <ImageView fitHeight="166.0" fitWidth="228.0" layoutX="30.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../hrm-logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="employeeTablePane" layoutX="293.0" layoutY="7.0" prefHeight="590.0" prefWidth="627.0">
+         <children>
+            <!-- Search TextField -->
+            <TextField fx:id="searchField" layoutX="441.0" layoutY="20.0" promptText="Search Employee..." />
+
+            <!-- Search Label -->
+            <Label layoutX="328.0" layoutY="25.0" text="Search Employee :" textFill="#fffafa" />
+
+            <!-- TableView for Employee Data -->
+            <TableView fx:id="employeeTable" layoutX="20.0" layoutY="60.0" prefHeight="466.0" prefWidth="580.0">
+               <!-- Employee ID Column -->
+               <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                  <TableColumn fx:id="fullNameColumn" prefWidth="120.0" text="Full Name" />
+                  <TableColumn fx:id="emailColumn" prefWidth="120.0" text="Email" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="150.0" text="Phone#" />
+                  <TableColumn fx:id="cityColumn" prefWidth="100.0" text="City" />
+               </columns>
+            </TableView>
+            <Button fx:id="showAddEmployeePaneButton" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Add New Employee" />
+            <Button fx:id="deleteEmployeeButton" layoutX="378.0" layoutY="533.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Delete" />
+            <Button fx:id="showUpdateEmployeePaneButton" layoutX="496.0" layoutY="533.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Update" />
+         </children>
+      </Pane>
+      <Pane fx:id="employeeUpdateFormPane" layoutX="295.0" layoutY="9.0" prefHeight="584.0" prefWidth="627.0" visible="false">
+         <children>
+            <TextField fx:id="update_hourlyRateField" layoutX="22.0" layoutY="426.0" prefHeight="26.0" prefWidth="66.0" />
+            <TextField fx:id="update_emailField" disable="true" layoutX="398.0" layoutY="51.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="update_addressField" layoutX="200.0" layoutY="117.0" prefHeight="26.0" prefWidth="347.0" />
+            <Button layoutX="325.0" layoutY="537.0" onAction="#backToTableFromAdd" prefHeight="32.0" prefWidth="124.0" text="Back">
+               <font>
+                  <Font name="Avenir Medium" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="26.0" layoutY="33.0" text="First Name" textFill="WHITE" />
+            <Label layoutX="23.0" layoutY="406.0" text="Hourly Rate" textFill="WHITE" />
+            <Label layoutX="27.0" layoutY="92.0" text="Phone" textFill="WHITE" />
+            <Label layoutX="200.0" layoutY="92.0" text="Address" textFill="WHITE" />
+            <Line endX="496.5" layoutX="118.0" layoutY="291.0" startX="-100.0" stroke="#f2f0f0" />
+            <Label layoutX="28.0" layoutY="155.0" text="City" textFill="WHITE" />
+            <Label layoutX="468.0" layoutY="8.0" prefHeight="17.0" prefWidth="76.0" text="Employee ID:" textFill="WHITE" />
+            <Label fx:id="update_employeeIdField" layoutX="545.0" layoutY="8.0" prefHeight="17.0" prefWidth="76.0" text="123456" textFill="WHITE" />
+            <Label layoutX="303.0" layoutY="339.0" text="Role" textFill="WHITE" />
+            <TextField fx:id="update_countryField" disable="true" layoutX="23.0" layoutY="248.0" prefHeight="26.0" prefWidth="180.0" />
+            <Label layoutX="23.0" layoutY="225.0" text="Country" textFill="WHITE" />
+            <DatePicker fx:id="update_startDateField" disable="true" layoutX="20.0" layoutY="490.0" />
+            <Label layoutX="22.0" layoutY="466.0" text="Start Date" textFill="WHITE" />
+            <DatePicker fx:id="update_endDateField" layoutX="244.0" layoutY="490.0" />
+            <Label layoutX="246.0" layoutY="466.0" text="End Date" textFill="WHITE" />
+            <ComboBox fx:id="update_departmentField" layoutX="22.0" layoutY="364.0" prefHeight="26.0" prefWidth="219.0" />
+            <Label layoutX="22.0" layoutY="340.0" text="Department" textFill="WHITE" />
+            <Button fx:id="updateEmployeeButton" layoutX="157.0" layoutY="537.0" prefHeight="32.0" prefWidth="159.0" text="Update Employee">
+               <font>
+                  <Font name="Avenir Medium" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="update_lastNameField" layoutX="211.0" layoutY="53.0" prefHeight="26.0" prefWidth="166.0" />
+            <Label layoutX="211.0" layoutY="33.0" text="Last Name" textFill="WHITE" />
+            <TextField fx:id="update_firstNameField" layoutX="26.0" layoutY="53.0" prefHeight="26.0" prefWidth="166.0" />
+            <TextField fx:id="update_postalField" layoutX="431.0" layoutY="176.0" prefHeight="26.0" prefWidth="180.0" />
+            <Label layoutX="431.0" layoutY="153.0" text="Postal Code" textFill="WHITE" />
+            <Label layoutX="225.0" layoutY="153.0" text="Province" textFill="WHITE" />
+            <TextField fx:id="update_passwordField" disable="true" layoutX="236.0" layoutY="247.0" prefHeight="26.0" prefWidth="180.0" />
+            <Label layoutX="236.0" layoutY="224.0" text="Password (will be emailed to employee)" textFill="WHITE" />
+            <ComboBox fx:id="update_roleField" layoutX="301.0" layoutY="364.0" prefWidth="150.0" />
+            <Button layoutX="436.0" layoutY="246.0" mnemonicParsing="false" onAction="#resetRandomPassword" text="Reset Password" />
+            <ComboBox fx:id="update_provinceField" layoutX="224.0" layoutY="176.0" prefHeight="26.0" prefWidth="185.0" />
+            <TextField fx:id="update_cityField" layoutX="26.0" layoutY="177.0" prefHeight="26.0" prefWidth="180.0" />
+            <TextField fx:id="update_phoneField" layoutX="27.0" layoutY="118.0" />
+            <Label layoutX="399.0" layoutY="31.0" text="Email" textFill="WHITE" />
+            <CheckBox fx:id="update_userActiveField" layoutX="25.0" layoutY="304.0" mnemonicParsing="false" text="Employee Is Active" textFill="#fffbfb" />
+         </children>
+      </Pane>
+      <Pane fx:id="employeeAddFormPane" layoutX="295.0" layoutY="9.0" prefHeight="584.0" prefWidth="627.0" visible="false">
+         <!-- Add your form elements here -->
+         <TextField fx:id="add_hourlyRateField" layoutX="17.0" layoutY="407.0" prefHeight="26.0" prefWidth="66.0" />
+
+         <TextField fx:id="add_emailField" layoutX="386.0" layoutY="50.0" prefHeight="26.0" prefWidth="204.0" />
+         <TextField fx:id="add_phoneField" layoutX="15.0" layoutY="111.0" />
+         <TextField fx:id="add_addressField" layoutX="188.0" layoutY="110.0" prefHeight="26.0" prefWidth="347.0" />
+         <Button layoutX="313.0" layoutY="536.0" onAction="#backToTableFromAdd" prefHeight="32.0" prefWidth="124.0" text="Back">
+            <font>
+               <Font name="Avenir Medium" size="14.0" />
+            </font></Button>
+         <Label layoutX="14.0" layoutY="32.0" text="First Name" textFill="WHITE" />
+         <Label layoutX="18.0" layoutY="387.0" text="Hourly Rate" textFill="WHITE" />
+         <Label layoutX="387.0" layoutY="31.0" text="Email" textFill="WHITE" />
+         <Label layoutX="15.0" layoutY="91.0" text="Phone" textFill="WHITE" />
+         <Label layoutX="188.0" layoutY="87.0" text="Address" textFill="WHITE" />
+         <Line endX="496.5" layoutX="116.0" layoutY="264.0" startX="-100.0" stroke="#f2f0f0" />
+         <TextField fx:id="add_cityField" layoutX="16.0" layoutY="171.0" prefHeight="26.0" prefWidth="180.0" />
+         <Label layoutX="16.0" layoutY="148.0" text="City" textFill="WHITE" />
+         <Label layoutX="456.0" layoutY="7.0" prefHeight="17.0" prefWidth="76.0" text="Employee ID:" textFill="WHITE" />
+         <Label fx:id="add_employeeIdField" layoutX="533.0" layoutY="7.0" prefHeight="17.0" prefWidth="76.0" text="123456" textFill="WHITE" />
+         <Label layoutX="258.0" layoutY="314.0" text="Role" textFill="WHITE" />
+         <TextField fx:id="add_countryField" disable="true" layoutX="16.0" layoutY="228.0" prefHeight="26.0" prefWidth="180.0" />
+         <Label layoutX="16.0" layoutY="205.0" text="Country" textFill="WHITE" />
+         <CheckBox fx:id="add_userActiveField" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" text="Employee Is Active" textFill="#fffbfb" />
+         <DatePicker fx:id="add_startDateField" layoutX="14.0" layoutY="473.0" />
+         <Label layoutX="16.0" layoutY="449.0" text="Start Date" textFill="WHITE" />
+         <DatePicker fx:id="add_endDateField" layoutX="238.0" layoutY="473.0" />
+         <Label layoutX="240.0" layoutY="449.0" text="End Date" textFill="WHITE" />
+         <ComboBox fx:id="add_departmentField" layoutX="17.0" layoutY="338.0" prefHeight="26.0" prefWidth="219.0" />
+         <Label layoutX="17.0" layoutY="314.0" text="Department" textFill="WHITE" />
+         <Button fx:id="addEmployeeButton" layoutX="180.0" layoutY="536.0" prefHeight="32.0" prefWidth="124.0" text="Add Employee">
+            <font>
+               <Font name="Avenir Medium" size="14.0" />
+            </font>
+         </Button>
+         <TextField fx:id="add_lastNameField" layoutX="199.0" layoutY="52.0" prefHeight="26.0" prefWidth="166.0" />
+         <Label layoutX="199.0" layoutY="32.0" text="Last Name" textFill="WHITE" />
+         <TextField fx:id="add_firstNameField" layoutX="14.0" layoutY="52.0" prefHeight="26.0" prefWidth="166.0" />
+         <TextField fx:id="add_postalField" layoutX="419.0" layoutY="170.0" prefHeight="26.0" prefWidth="180.0" />
+         <Label layoutX="419.0" layoutY="147.0" text="Postal Code" textFill="WHITE" />
+         <Label layoutX="213.0" layoutY="147.0" text="Province" textFill="WHITE" />
+         <TextField fx:id="add_passwordField" disable="true" layoutX="250.0" layoutY="227.0" prefHeight="26.0" prefWidth="180.0" />
+         <Label layoutX="250.0" layoutY="204.0" text="Password (will be emailed to employee)" textFill="WHITE" />
+         <ComboBox fx:id="add_roleField" layoutX="256.0" layoutY="339.0" prefWidth="150.0" />
+         <ComboBox fx:id="add_provinceField" layoutX="212.0" layoutY="170.0" prefHeight="26.0" prefWidth="185.0" />
+         <Button layoutX="440.0" layoutY="226.0" mnemonicParsing="false" onAction="#generateRandomPassword" text="Generate Password" />
+      </Pane>
+   </children>
+</AnchorPane>
